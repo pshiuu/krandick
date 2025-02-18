@@ -8,7 +8,7 @@ export const Slider = () => {
       renderMode: "performance",
       drag: false,
       slides: {
-        perView: 5.5,
+        perView: 4,
         spacing: 16,
       },
       created(s) {
@@ -42,7 +42,7 @@ export const Slider = () => {
         drag: false,
         rtl: true,
         slides: {
-          perView: 4.5,
+          perView: 4,
           spacing: 16,
         },
         created(s) {
