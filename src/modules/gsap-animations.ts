@@ -158,29 +158,6 @@ export const gsapAnimations = () => {
         }
     )
 
-    // Animate the progress bar filling as you scroll through the steps section
-    gsap.to(".progress", {
-        height: "100%",
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".steps",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: true,
-            // markers: true, // Uncomment for debugging
-        }
-    });
-    
-    // Toggle active class on each step when the scroll reaches it
-    gsap.utils.toArray(".step").forEach((step) => {
-        ScrollTrigger.create({
-            trigger: step,
-            start: "top center",
-            end: "bottom center",
-            toggleClass: { targets: step, className: "active" },
-            // markers: true, // Uncomment for debugging
-        });
-    });
     
     // Working section animations
     // Text header animation
