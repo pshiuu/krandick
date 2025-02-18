@@ -159,27 +159,158 @@ export const gsapAnimations = () => {
     )
 
     // Animate the progress bar filling as you scroll through the steps section
-gsap.to(".progress", {
-    height: "100%",
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".steps",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-      // markers: true, // Uncomment for debugging
-    }
-  });
-  
-  // Toggle active class on each step when the scroll reaches it
-  gsap.utils.toArray(".step").forEach((step) => {
-    ScrollTrigger.create({
-      trigger: step,
-      start: "top center",
-      end: "bottom center",
-      toggleClass: { targets: step, className: "active" },
-      // markers: true, // Uncomment for debugging
+    gsap.to(".progress", {
+        height: "100%",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".steps",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+            // markers: true, // Uncomment for debugging
+        }
     });
-  });
-  
+    
+    // Toggle active class on each step when the scroll reaches it
+    gsap.utils.toArray(".step").forEach((step) => {
+        ScrollTrigger.create({
+            trigger: step,
+            start: "top center",
+            end: "bottom center",
+            toggleClass: { targets: step, className: "active" },
+            // markers: true, // Uncomment for debugging
+        });
+    });
+    
+    // Working section animations
+    // Text header animation
+    gsap.fromTo(
+        ".working-text-wrap",
+        {
+            opacity: 0,
+            y: 30
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".section_working",
+                start: "top 70%",
+                end: "top top",
+                toggleActions: "play reverse play reverse"
+            }
+        }
+    )
+
+    // Work blocks animation with stagger
+    gsap.fromTo(
+        ".work-block",
+        {
+            opacity: 0,
+            y: 50
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".working-wrap",
+                start: "top 70%",
+                end: "top top",
+                toggleActions: "play reverse play reverse"
+            }
+        }
+    )
+
+    // Beate section animations
+    // Text header animation
+    gsap.fromTo(
+        ".beate-text-wrap",
+        {
+            opacity: 0,
+            y: 30
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".section_beate",
+                start: "top 70%",
+                end: "top top",
+                toggleActions: "play reverse play reverse"
+            }
+        }
+    )
+
+
+    // CTA section animations
+    gsap.fromTo(
+        ".cta-head",
+        {
+            opacity: 0,
+            y: 30
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".section_cta",
+                start: "top 70%",
+                end: "top top",
+                toggleActions: "play reverse play reverse"
+            }
+        }
+    )
+
+    // Button animation
+    gsap.fromTo(
+        ".button-3.left",
+        {
+            opacity: 0,
+            x: -50
+        },
+        {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".section_cta",
+                start: "top 70%",
+                end: "top top",
+                toggleActions: "play reverse play reverse"
+            }
+        }
+    )
+
+    // Image animation
+    gsap.fromTo(
+        ".cta-img-absolute",
+        {
+            opacity: 0,
+            x: 50,
+            scale: 0.95
+        },
+        {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".section_cta",
+                start: "top 70%",
+                end: "top top",
+                toggleActions: "play reverse play reverse"
+            }
+        }
+    )
 }
