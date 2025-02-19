@@ -1,4 +1,10 @@
 export const gsapAnimations = () => {
+    // Check if screen width is greater than 975px
+    const shouldAnimate = window.matchMedia('(min-width: 976px)').matches;
+    
+    // Only run animations if screen is large enough
+    if (!shouldAnimate) return;
+
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
