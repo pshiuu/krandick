@@ -23,13 +23,13 @@ export const Slider = () => {
       breakpoints: {
         '(max-width: 768px)': {
           slides: {
-            perView: 3.5,
+            perView: 2.5,
             spacing: 16,
           },
         },
         '(max-width: 500px)': {
           slides: {
-            perView: 2,
+            perView: 1.5,
             spacing: 16,
           },
         },
@@ -57,13 +57,13 @@ export const Slider = () => {
         breakpoints: {
           '(max-width: 768px)': {
             slides: {
-              perView: 3.5,
+              perView: 2.5,
               spacing: 16,
             },
           },
           '(max-width: 500px)': {
             slides: {
-              perView: 2,
+              perView: 1.5,
               spacing: 16,
             },
           },
